@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app">
+    <select data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo" class="periodo"></select>
+    <input data-bind="value: materia" placeholder="Matéria" class="field">
+    <input data-bind="value: teste" placeholder="Nota do Teste" class="field">
+    <input data-bind="value: prova" placeholder="Nota da Prova" class="field">
+    <input data-bind="value: formativa" placeholder="Nota Formativa" class="field">
+    <input data-bind="value: extra" placeholder="Pontos Extra" class="field">
+    <div class="buttons">
+      <button data-bind="click: clear" class="btn">Limpar</button>
+      <button data-bind="click: calc" class="btn">Calcular</button>
+    </div>
+    <p data-bind="with: nota, visible: nota()" class="nota">Sua média é de <span data-bind="text: media" class="bold"></span> e você ganhou mais <span data-bind="text: pontuacao" class="bold"></span> na pontuação total</p>
+    <table data-bind="visible: notas().length &gt; 0" class="notas">
+      <thead class="notas-head">
+        <tr>
+          <th>Matéria</th>
+          <th>Nota </th>
+          <th>Pontuação</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: notas">
+        <tr>
+          <td data-bind="text: materia"></td>
+          <td data-bind="text: nota"></td>
+          <td data-bind="text: pontuacao"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script type="text/javascript" src="knockout-3.4.0.js"></script>
+  <script src="app.js"></script>
+</body>
