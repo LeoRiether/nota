@@ -34,7 +34,6 @@
 			var m = t*0.2 + p*0.7 + f*0.1 + e||0;
 			var p = m * (this.periodo()||{peso:1.0}).peso;
 			m = clamp(m, 0, 10);
-			p = clamp(p, 0, 10)
 			this.nota({ 
 				media: round(m).toString().replace('.', ','), 
 				pontuacao: round(p).toString().replace('.', ',') 
