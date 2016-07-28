@@ -20,8 +20,8 @@
 			return Math.round(n*10)/10;
 		}
 
-		function clamp(n, min, max) {
-			return Math.min(Math.max(n, min), max)
+		function clamp(x, min, max) {
+			return Math.min(Math.max(x, min), max)
 		}
 
 		var ff = function (a) { return a() ? parseFloat(a().replace(',', '.')) : 0; }
@@ -34,7 +34,7 @@
 			var m = t*0.2 + p*0.7 + f*0.1 + e||0;
 			var p = m * (this.periodo()||{peso:1.0}).peso;
 			m = clamp(m, 0, 10);
-			p = clamp(p, 0, 10);
+			p = clamp(p, 0, 10)
 			this.nota({ 
 				media: round(m).toString().replace('.', ','), 
 				pontuacao: round(p).toString().replace('.', ',') 
