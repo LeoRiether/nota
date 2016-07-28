@@ -43,6 +43,7 @@
 		};
 
 		this.clear = function () {
+			this.materia(null);
 			this.teste(null);
 			this.prova(null);
 			this.formativa(null);
