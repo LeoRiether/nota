@@ -32,8 +32,8 @@
 				f = ff(this.formativa),
 				e = ff(this.extra);
 			var m = t*0.2 + p*0.7 + f*0.1 + e||0;
-			var p = m * (this.periodo()||{peso:1.0}).peso;
 			m = clamp(m, 0, 10);
+			var p = m * (this.periodo()||{peso:1.0}).peso;
 			this.nota({ 
 				media: round(m).toString().replace('.', ','), 
 				pontuacao: round(p).toString().replace('.', ',') 
