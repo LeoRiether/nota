@@ -7,7 +7,9 @@
 </head>
 <body>
   <div class="app">
-    <select data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo" class="periodo"></select>
+    <div class="periodo">
+      <select data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo"></select>
+    </div>
     <input data-bind="value: materia" placeholder="Matéria" class="field">
     <input data-bind="value: teste" placeholder="Nota do Teste" class="field">
     <input data-bind="value: prova" placeholder="Nota da Prova" class="field">

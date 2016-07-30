@@ -6,7 +6,8 @@ head
 	link(rel="stylesheet", href="app.css")
 body
 	.app
-		select.periodo(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
+		div.periodo
+			select(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
 		input.field(data-bind="value: materia" placeholder="Matéria")
 		input.field(data-bind="value: teste" placeholder="Nota do Teste")
 		input.field(data-bind="value: prova" placeholder="Nota da Prova")
