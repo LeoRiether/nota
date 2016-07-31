@@ -116,6 +116,7 @@ body {
 	background: url('sayagata-400px.png') repeat;
 	padding: 1em 25%;
 	width: 100%;
+	margin-top: 2em;
 
 	h3 {
 		font: 24px "Source Sans Pro", "Oxygen", Arial, sans-serif;
@@ -130,10 +131,10 @@ a {
 @media screen and (max-width: 840px) {
 	.app {
 		margin: auto 10%;
-		font-size: 14px;
 	}
 	.field, .btn, .notas, .nota, .periodo {
 		margin: 0.5em 0;
+		font-size: 14px;
 	}
 	.footer {
 		padding: 1em 10%;
