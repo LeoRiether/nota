@@ -19,7 +19,7 @@ body {
 }
 
 .app {
-	flex: 1;
+	flex: 1 0 auto;
 	display: flex;
 	flex-direction: column;
 	//display: -webkit-flex; /* Safari */
@@ -118,7 +118,7 @@ body {
 	margin-top: 2em;
 
 	h3 {
-		font: 24px "Source Sans Pro", "Oxygen", Arial, sans-serif;
+		font: 24px "Source Sans Pro", Arial, sans-serif;
 	}
 }
 
