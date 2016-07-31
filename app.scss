@@ -29,6 +29,7 @@ body {
 	border-radius: 1em;
 	border: thin solid #ddd;
 	font: 18px Arial, sans-serif;
+	box-shadow: none;
 }
 
 .periodo  {
@@ -95,7 +96,7 @@ body {
 	padding-bottom: 0.5em;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 840px) {
 	.app {
 		margin: auto 10%;
 	}
