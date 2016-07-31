@@ -13,19 +13,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	display: -webkit-flex; /* Safari */
-	display: -ms-flexbox;
     -webkit-flex-direction: column; /* Safari 6.1+ */
-    -ms-flex-direction: column;
 	background: url('connect.png') repeat;
 	font-family: "Oxygen", Arial, sans-serif;
 }
 
 .app {
 	flex: 1;
-	-ms-flex: 1;
 	display: flex;
-	display: -ms-flex;
-	-ms-flex-direction: column;
 	flex-direction: column;
 	display: -webkit-flex; /* Safari */
     -webkit-flex-direction: column; /* Safari 6.1+ */
