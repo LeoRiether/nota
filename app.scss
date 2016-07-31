@@ -53,7 +53,7 @@ body {
 	    //width: 268px;
 	    width: 100%;
 	    padding: 0.5em;
-	    font: 18px Arial, sans-serif;
+	    font-size: 18px;
 	    line-height: 1;
 	    border: 0;
 	    border-radius: 0;
@@ -134,6 +134,9 @@ a {
 	}
 	.field, .btn, .notas, .nota, .periodo {
 		margin: 0.5em 0;
+		font-size: 14px;
+	}
+	.periodo select {
 		font-size: 14px;
 	}
 	.footer {
