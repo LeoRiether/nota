@@ -1,10 +1,6 @@
 $theme: #08b20b;
 $themeDark: darken($theme, 10%);
 
-html, body {
-	text-align: center;
-}
-
 body {
 	background: url('connect.png') repeat;
 }
@@ -35,6 +31,9 @@ body {
 .periodo  {
 	position: relative;
 	padding: 0;
+	background: url('down-arrow.png') no-repeat, white;
+	background-size: 1em;
+	background-position: 98.5% 50%;
 	select {
 		background: transparent;
 	    //width: 268px;
@@ -47,14 +46,14 @@ body {
 	    //height: 34px;
 	    -webkit-appearance: none;
 	}
-	&:after {
+	/*&:after {
 		content: '❯';
 		transform: rotate(90deg);
 		display: block;
 		position: absolute;
 		top: 0.5em;
 		right: 0.75em;
-	}
+	}*/
 }
 
 .btn {
@@ -80,7 +79,7 @@ body {
 .notas {
 	overflow: hidden;
 	border-collapse: collapse;
-	box-shadow: 0 0 1px $themeDark;
+	//border: thin solid $themeDark;
 	width: 100%;
 	padding: 0;
 
