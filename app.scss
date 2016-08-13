@@ -43,7 +43,7 @@ body {
 }
 
 .field {
-	$highlight: rgb(81, 203, 238);
+	$highlight: rgb(83, 178, 237);
 	transition: all 0.3s;
 	&:focus {
 		box-shadow: 0 0 5px rgba($highlight, 1);
