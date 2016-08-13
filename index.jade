@@ -18,17 +18,17 @@ body
 		.buttons
 			button.btn(data-bind="click: clear") Limpar
 			button.btn(data-bind="click: calc") Calcular
-		p.nota(data-bind="with: nota, visible: nota()")
+		p.nota.fadeInUp(data-bind="with: nota, visible: nota(), css: { anim: nota() }")
 			| Sua média é de #[span.bold(data-bind="text: media")] e você ganhou mais #[span.bold(data-bind="text: pontuacao")] na pontuação total
 
-		table.notas(data-bind="visible: notas().length > 0")
+		table.notas.fadeInUp(data-bind="visible: notas().length > 0, css: { anim: nota() }")
 			thead.notas-head
 				tr
 					th Matéria
 					th Nota 
 					th Pontuação
 			tbody(data-bind="foreach: notas")
-				tr
+				tr.anim.zoomInDown
 					td(data-bind="text: materia")
 					td(data-bind="text: nota")
 					td(data-bind="text: pontuacao")
