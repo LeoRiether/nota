@@ -42,33 +42,33 @@ body {
 	box-shadow: none;
 }
 
-.field {
+.field, .periodo, .periodo select {
 	$highlight: rgb(83, 178, 237);
 	transition: all 0.3s;
 	&:focus {
-		box-shadow: 0 0 5px rgba($highlight, 1);
+		box-shadow: 0 0 8px rgba($highlight, 0.6);
 		border-color: $highlight;
 	}
 }
 
 .periodo  {
-	outline: 0;
 	position: relative;
 	padding: 0;
 	background: url('down-arrow.png') no-repeat, white;
 	background-size: 1em;
 	background-position: 98.5% 50%;
 	select {
+		outline: 0;
 		background: transparent;
-	    //width: 268px;
-	    width: 100%;
-	    padding: 0.5em;
-	    font-size: 18px;
-	    line-height: 1;
-	    border: 0;
-	    border-radius: 0;
-	    //height: 34px;
-	    -webkit-appearance: none;
+	  //width: 268px;
+	  width: 100%;
+	  padding: 0.5em;
+	  font-size: 18px;
+	  line-height: 1;
+	  border: 0;
+	  border-radius: 1em;
+	  //height: 34px;
+	  -webkit-appearance: none;
 	}
 	/*&:after {
 		content: '❯';
