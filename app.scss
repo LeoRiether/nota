@@ -32,6 +32,7 @@ body {
 }
 
 .field, .btn, .notas, .nota, .periodo {
+	outline: 0;
 	background: #fefffe;
 	margin: 1em 0;
 	padding: 0.5em;
@@ -39,6 +40,15 @@ body {
 	border: thin solid #ddd;
 	font-size: 18px;
 	box-shadow: none;
+}
+
+.field {
+	$highlight: rgb(81, 203, 238);
+	transition: all 0.3s;
+	&:focus {
+		box-shadow: 0 0 5px rgba($highlight, 1);
+		border-color: $highlight;
+	}
 }
 
 .periodo  {
