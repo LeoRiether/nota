@@ -36,13 +36,16 @@ window.API = (function () {
 				.map(_firstUpperCase.bind(this));
 		}, this);
 
+		this.materia.focused = ko.observable();
+
 		this.showMateriaTip = ko.pureComputed(function () {
 			var fm = this.filterMaterias();
 			return fm.length > 0 &&
 						 (fm.length == 1 ?
 						   this.materias.indexOf(this.materia().toLowerCase()) === -1 :
 							 true) &&
-						 this.materia() !== '';
+						 this.materia() !== '' &&
+						 this.materia.focused();
 		}, this);
 
 		this.chooseMateria = function (m) {

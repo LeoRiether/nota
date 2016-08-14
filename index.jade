@@ -12,9 +12,9 @@ html(lang="en")
 			.periodo
 				select(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
 			.dropdown-group
-				input.materia.field(data-bind="textInput: materia" placeholder="Matéria")
+				input.materia.field(data-bind="textInput: materia, hasfocus: materia.focused" placeholder="Matéria")
 				span.close(data-bind="visible: materia() !== '', click: resetMateria") &times;
-				ul.dropdown.fadeInUp(data-bind="foreach: filterMaterias, css: { 'active anim': showMateriaTip }")
+				ul.dropdown.fadeInUp(data-bind="foreach: filterMaterias, css: { 'active anim': showMateriaTip  }")
 					li(data-bind="text: $data, click: $root.chooseMateria")
 			input.field(data-bind="value: teste" placeholder="Nota do Teste")
 			input.field(data-bind="value: prova" placeholder="Nota da Prova")
