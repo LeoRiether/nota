@@ -40,6 +40,7 @@ body {
 	border: thin solid #ddd;
 	font-size: 18px;
 	box-shadow: none;
+	box-sizing: border-box;
 }
 
 .field, .periodo, .periodo select {
