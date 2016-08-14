@@ -36,16 +36,12 @@ window.API = (function () {
 				.map(_firstUpperCase.bind(this));
 		}, this);
 
-		this.materia.focused = ko.observable();
-		var _materiafocused = this.materia.focused();
-		this.materia.focused.subscribe(function (n) {
-			if (n === false) {
-				setTimeout(function () {
-					_materiafocused = n;
-				}, 100);
-			} else {
-				_materiafocused = n;
-			}
+		var _dropdown = document.querySelector('.dropdown');
+		document.querySelector('.materia').addEventListener('blur', function () {
+			setTimeout(function () {
+				_dropdown.classList.remove('active');
+				_dropdown.classList.remove('anim');
+			}, 300);
 		});
 
 		this.showMateriaTip = ko.pureComputed(function () {
@@ -54,8 +50,7 @@ window.API = (function () {
 						 (fm.length == 1 ?
 						   this.materias.indexOf(this.materia().toLowerCase()) === -1 :
 							 true) &&
-						 this.materia() !== '' &&
-						 _materiafocused;
+						 this.materia() !== '';
 		}, this);
 
 		this.chooseMateria = function (m) {
