@@ -63,6 +63,9 @@ window.API = (function () {
 
 		var ff = function (a) { return a() ? parseFloat(a().replace(',', '.')) : 0; }
 
+		// Number to comma separated string
+		function _numbToCommaStr(n) { return n.toString().replace('.', ','); }
+
 		this.calc = function () {
 			var t = ff(this.teste),
 				p = ff(this.prova),
@@ -72,8 +75,8 @@ window.API = (function () {
 			m = clamp(m, 0, 10);
 			var p = m * (this.periodo()||{peso:1.0}).peso;
 			this.nota({
-				media: round(m).toString().replace('.', ','),
-				pontuacao: round(p).toString().replace('.', ',')
+				media: _numbToCommaStr(round(m)),
+				pontuacao: _numbToCommaStr(round(p))
 			});
 			this.addNota(this.materia(), this.nota().media, this.nota().pontuacao);
 		};
