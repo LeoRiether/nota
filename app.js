@@ -39,9 +39,9 @@ window.API = (function () {
 		this.showMateriaTip = ko.pureComputed(function () {
 			var fm = this.filterMaterias();
 			return fm.length > 0 &&
-						 fm.length == 1 ?
+						 (fm.length == 1 ?
 						   this.materias.indexOf(this.materia().toLowerCase()) === -1 :
-							 true &&
+							 true) &&
 						 this.materia() !== '';
 		}, this);
 
