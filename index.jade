@@ -1,59 +1,59 @@
-//- out: ., compress: true
+//- out: ., compress: false
 doctype html
 html(lang="en")
-head
-	meta(charset="UTF-8")
-	meta(name="viewport" content="width=device-width, initial-scale=1")
-	title Sigma Nota
-	link(rel="stylesheet", href="app.min.css")
-	link(rel="icon" href="icon.png" type="image/x-icon")
-body
-	.app
-		.periodo
-			select(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
-		.dropdown-group
-			input.materia.field(data-bind="textInput: materia" placeholder="Matéria")
-			span.close(data-bind="visible: materia() !== '', click: resetMateria") &times;
-			ul.dropdown.fadeInUp(data-bind="foreach: filterMaterias, css: { 'active anim': showMateriaTip }")
-				li(data-bind="text: $data, click: $root.chooseMateria")
-		input.field(data-bind="value: teste" placeholder="Nota do Teste")
-		input.field(data-bind="value: prova" placeholder="Nota da Prova")
-		input.field(data-bind="value: formativa" placeholder="Nota Formativa")
-		input.field(data-bind="value: extra" placeholder="Pontos Extra")
-		.buttons
-			button.btn(data-bind="click: clear") Limpar
-			button.btn(data-bind="click: calc") Calcular
-		p.nota.fadeInUp(data-bind="with: nota, visible: nota(), css: { anim: nota() }")
-			| Sua média é de #[span.bold(data-bind="text: media")] e você ganhou mais #[span.bold(data-bind="text: pontuacao")] na pontuação total
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title Sigma Nota
+		link(rel="stylesheet", href="app.min.css")
+		link(rel="icon" href="icon.png" type="image/png")
+	body
+		.app
+			.periodo
+				select(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
+			.dropdown-group
+				input.materia.field(data-bind="textInput: materia" placeholder="Matéria")
+				span.close(data-bind="visible: materia() !== '', click: resetMateria") &times;
+				ul.dropdown.fadeInUp(data-bind="foreach: filterMaterias, css: { 'active anim': showMateriaTip }")
+					li(data-bind="text: $data, click: $root.chooseMateria")
+			input.field(data-bind="value: teste" placeholder="Nota do Teste")
+			input.field(data-bind="value: prova" placeholder="Nota da Prova")
+			input.field(data-bind="value: formativa" placeholder="Nota Formativa")
+			input.field(data-bind="value: extra" placeholder="Pontos Extra")
+			.buttons
+				button.btn(data-bind="click: clear") Limpar
+				button.btn(data-bind="click: calc") Calcular
+			p.nota.fadeInUp(data-bind="with: nota, visible: nota(), css: { anim: nota() }")
+				| Sua média é de #[span.bold(data-bind="text: media")] e você ganhou mais #[span.bold(data-bind="text: pontuacao")] na pontuação total
 
-		table.notas.fadeInUp(data-bind="visible: notas().length > 0, css: { anim: nota() }")
-			thead.notas-head
-				tr
-					th Matéria
-					th Nota 
-					th Pontuação
-			tbody(data-bind="foreach: notas")
-				tr.anim.zoomInDown
-					td(data-bind="text: materia")
-					td(data-bind="text: nota")
-					td(data-bind="text: pontuacao")
-
-
-	footer.footer 
-		.footer-field 
-			h3 Sobre
-			p Feito por #[a(href="https://github.com/LeoRiether") Leonardo Riether]
-			p Hospedado por #[a(href="https://pages.github.com/") Github Pages]
-		.footer-field
-			h3 Créditos
-			p Ícones: #[a(href="http://www.flaticon.com/authors/madebyoliver") Madebyoliver] no #[a(href="www.flaticon.com") Flaticon]
-			p Fundos de tela: #[a(href="subtlepatterns.com") Subtlepatterns]
-			p: a(href="knockoutjs.com") KnockoutJs
-			p: a(href="https://leaverou.github.io/prefixfree/") Prefixfree
+			table.notas.fadeInUp(data-bind="visible: notas().length > 0, css: { anim: nota() }")
+				thead.notas-head
+					tr
+						th Matéria
+						th Nota 
+						th Pontuação
+				tbody(data-bind="foreach: notas")
+					tr.anim.zoomInDown
+						td(data-bind="text: materia")
+						td(data-bind="text: nota")
+						td(data-bind="text: pontuacao")
 
 
+		footer.footer 
+			.footer-field 
+				h3 Sobre
+				p Feito por #[a(href="https://github.com/LeoRiether") Leonardo Riether]
+				p Hospedado por #[a(href="https://pages.github.com/") Github Pages]
+			.footer-field
+				h3 Créditos
+				p Ícones: #[a(href="http://www.flaticon.com/authors/madebyoliver") Madebyoliver] no #[a(href="www.flaticon.com") Flaticon]
+				p Fundos de tela: #[a(href="subtlepatterns.com") Subtlepatterns]
+				p: a(href="knockoutjs.com") KnockoutJs
+				p: a(href="https://leaverou.github.io/prefixfree/") Prefixfree
 
-	script(type="text/javascript" src="knockout-3.4.0.js")
-	script(src="app.js")
-	script(src="prefixfree.min.js")
-	
+
+
+		script(type="text/javascript" src="knockout-3.4.0.js")
+		script(src="app.js")
+		script(src="prefixfree.min.js")
+		
