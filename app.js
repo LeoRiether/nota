@@ -1,4 +1,4 @@
-(function () {
+window.API = (function () {
 	"use strict";
 
 	function AppViewModel() {
@@ -9,12 +9,49 @@
 			{ name: "4º Período", peso: 4.0 }
 		];
 		this.periodo = ko.observable();
-		this.materia = ko.observable();
+		this.materia = ko.observable('');
 		this.teste = ko.observable();
 		this.prova = ko.observable();
 		this.formativa = ko.observable();
 		this.extra = ko.observable();
 		this.nota = ko.observable();
+
+		this.materias =  [
+			'arte', 'biologia', 'educacao fisica', 'filosofia', 'fisica',
+			'geografia', 'historia', 'espanhol', 'ingles', 'portugues',
+			'matematica', 'quimica', 'redacao', 'sociologia'
+		];
+
+		function _checkMateria(e) {
+			return e.startsWith(this.materia().toLowerCase());
+		}
+
+		function _firstUpperCase(e) {
+			return e[0].toUpperCase() + e.substr(1);
+		}
+
+		this.filterMaterias = ko.pureComputed(function () {
+			return this.materias
+				.filter(_checkMateria.bind(this))
+				.map(_firstUpperCase.bind(this));
+		}, this);
+
+		this.showMateriaTip = ko.pureComputed(function () {
+			var fm = this.filterMaterias();
+			return fm.length > 0 &&
+						 fm.length == 1 ?
+						   this.materias.indexOf(this.materia().toLowerCase()) === -1 :
+							 true &&
+						 this.materia() !== '';
+		}, this);
+
+		this.chooseMateria = function (m) {
+			this.materia(m);
+		}.bind(this);
+
+		this.resetMateria = function () {
+			this.materia('');
+		}.bind(this);
 
 		function round(n) {
 			return Math.round(n*10)/10;
@@ -34,15 +71,15 @@
 			var m = t*0.2 + p*0.7 + f*0.1 + e||0;
 			m = clamp(m, 0, 10);
 			var p = m * (this.periodo()||{peso:1.0}).peso;
-			this.nota({ 
-				media: round(m).toString().replace('.', ','), 
-				pontuacao: round(p).toString().replace('.', ',') 
+			this.nota({
+				media: round(m).toString().replace('.', ','),
+				pontuacao: round(p).toString().replace('.', ',')
 			});
 			this.addNota(this.materia(), this.nota().media, this.nota().pontuacao);
 		};
 
 		this.clear = function () {
-			this.materia(null);
+			this.materia('');
 			this.teste(null);
 			this.prova(null);
 			this.formativa(null);
@@ -56,5 +93,7 @@
 		};
 	}
 
-	ko.applyBindings(new AppViewModel());
+	var r = new AppViewModel();
+	ko.applyBindings(r);
+	return r;
 })();

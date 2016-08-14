@@ -14,7 +14,7 @@ body {
 	flex-direction: column;
 	//display: -webkit-flex; /* Safari */
     //-webkit-flex-direction: column; /* Safari 6.1+ */
-	background: url('connect.png') repeat;
+	background: url('sayagata-400px.png') repeat;
 	font-family: "Oxygen", Arial, sans-serif;
 }
 
@@ -43,6 +43,7 @@ body {
 }
 
 .field, .periodo, .periodo select {
+	width: 100%;
 	$highlight: rgb(83, 178, 237);
 	transition: all 0.3s;
 	&:focus {
@@ -78,6 +79,46 @@ body {
 		top: 0.5em;
 		right: 0.75em;
 	}*/
+}
+
+.dropdown-group {
+	position: relative;
+}
+
+.dropdown {
+	border-radius: 0.5em;
+	border: thin solid rgba(#333, .2);
+	box-shadow: 0 6px 6px -6px rgba(#333, .4);
+	margin: 0;
+	position: absolute;
+	top: 90%;
+	left: 0;
+	box-sizing: box-border;
+	padding: 0;
+	background: white;
+	display: none;
+	list-style-type: none;
+	width: 100%;
+
+	&.active {
+		display: block;
+	}
+
+	li {
+		padding: 0.25em 0.5em;
+		transition: background 0.2s;
+		&:hover { background: #efefef; }
+	}
+}
+
+.close {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	cursor: pointer;
+	font-size: 20px;
+	color: #333;
 }
 
 .btn {
@@ -129,7 +170,7 @@ body {
 .footer {
 	box-sizing: border-box;
 	box-shadow: 0 -3px 8px rgba(black, 0.2);
-	background: url('sayagata-400px.png') repeat;
+	background: url('connect.png') repeat;
 	padding: 1em 25%;
 	width: 100%;
 	margin-top: 2em;
