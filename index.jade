@@ -11,8 +11,8 @@ html(lang="en")
 		.app
 			.periodo
 				select(data-bind="options: periodos, optionsCaption: 'Selecione o período...', optionsText: 'name', value: periodo")
-			.dropdown-group(data-bind="hasfocus: materia.focused")
-				input.materia.field(data-bind="textInput: materia" placeholder="Matéria")
+			.dropdown-group
+				input.materia.field(data-bind="textInput: materia, hasfocus: materia.focused" placeholder="Matéria")
 				span.close(data-bind="visible: materia() !== '', click: resetMateria") &times;
 				ul.dropdown.fadeInUp(data-bind="foreach: filterMaterias, css: { 'active anim': showMateriaTip  }")
 					li(data-bind="text: $data, click: $root.chooseMateria")

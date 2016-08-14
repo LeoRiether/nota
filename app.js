@@ -37,6 +37,16 @@ window.API = (function () {
 		}, this);
 
 		this.materia.focused = ko.observable();
+		var _materiafocused = this.materia.focused();
+		this.materia.focused.subscribe(function (n) {
+			if (n === false) {
+				setTimeout(function () {
+					_materiafocused = n;
+				}, 100);
+			} else {
+				_materiafocused = n;
+			}
+		});
 
 		this.showMateriaTip = ko.pureComputed(function () {
 			var fm = this.filterMaterias();
@@ -45,7 +55,7 @@ window.API = (function () {
 						   this.materias.indexOf(this.materia().toLowerCase()) === -1 :
 							 true) &&
 						 this.materia() !== '' &&
-						 this.materia.focused();
+						 _materiafocused;
 		}, this);
 
 		this.chooseMateria = function (m) {
